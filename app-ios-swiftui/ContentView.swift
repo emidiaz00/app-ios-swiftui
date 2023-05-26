@@ -15,11 +15,11 @@ struct ContentView: View {
     var alert: Alert {
         Alert(title: Text("Alerta"), message: Text("Soy una alerta"), dismissButton:
                 .default(Text("Aceptar"),
-                action: {
-                print("Es mi primer accion")
+                         action: {
+            print("Es mi primer accion")
         }))
     }
-     
+    
     var action: ActionSheet {
         ActionSheet(title: Text("Action sheet"), message: Text("Selecciona una opcion"), buttons: [
             .default(Text("Galeria")),
@@ -56,7 +56,7 @@ struct ContentView: View {
                             .foregroundColor(.white)
                             .bold()
                             .font(.headline)
-                        }.padding(.all)
+                    }.padding(.all)
                 }.background(Color.indigo)
                     .cornerRadius(12)
                     .alert(isPresented: self.$showAlert) { () -> Alert in
@@ -73,12 +73,12 @@ struct ContentView: View {
                             .foregroundColor(.white)
                             .bold()
                             .font(.headline)
-                        }.padding(.all)
+                    }.padding(.all)
                 }.background(Color.red)
                     .cornerRadius(12)
                     .actionSheet(isPresented: self.$showActionSheet) { () -> ActionSheet in self.action
                     }
-                }
+            }
             Spacer()
         }.padding(.all)
     }
